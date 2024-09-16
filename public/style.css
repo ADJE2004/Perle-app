@@ -1,0 +1,403 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0 ; /* Ajoute un padding à gauche et à droite */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur totale */
+}
+/* Style général pour la barre supérieure */
+/* Style général pour la barre supérieure */
+.top-bar {
+    background-color: #ffffff; /* Couleur de fond blanche */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* Style pour les éléments d'authentification */
+.auth-links {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Aligne le contenu à droite */
+    position: relative; /* Position relative pour le dropdown */
+}
+
+/* Style pour le dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Ajout d'une flèche pour indiquer le dropdown */
+.dropdown-toggle::after {
+    content: ' ▼'; /* Flèche vers le bas */
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positionne le menu juste en dessous du texte */
+    right: 0; /* Aligne le menu à droite du conteneur parent */
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 15px;
+    color: #dc3545;
+    text-decoration: none;
+    border-bottom: 1px solid #f1f1f1;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: #f8d7da;
+    color: #c82333;
+}
+
+/* Afficher le menu lorsque le dropdown est activé */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* Style des liens de connexion et création de compte */
+.btn-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-link:hover {
+    background-color: #e0f0ff;
+}
+
+/* Style du lien de déconnexion pour l'apparence d'un lien */
+.btn-logout {
+    text-decoration: none;
+    color: #dc3545; /* Couleur rouge pour signaler la déconnexion */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btn-logout:hover {
+    color: #c82333; /* Couleur légèrement plus foncée au survol */
+}
+
+/* Style du menu de navigation */
+
+
+.header-content {
+    display: flex;
+
+    width: 100%;
+}
+.logo{
+    width: 70px; /* Réduit la taille du logo */
+    margin-left: 350px; /* Décale légèrement le logo vers la droite */
+    display: block;
+    margin-bottom: 40px;
+}
+.logo-text {
+    font-size: 20px;
+    color: white;
+    /* Ajoute d'autres styles pour le texte si nécessaire */
+}
+
+/* Style pour l'en-tête */
+header {
+    position: relative; /* Position relative nécessaire pour le pseudo-élément */
+    padding: 10px 0; /* Espacement interne */
+    color: white;
+    width: 100%;
+    height: 400px;
+    background: url('assets/images/il_1140xN.2933610988_li0j.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Pseudo-élément pour la superposition noire transparente */
+header::before {
+    content: ''; /* Nécessaire pour que le pseudo-élément soit visible */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur noire avec 50% de transparence */
+    z-index: 1; /* Assure que le pseudo-élément est au-dessus de l'image de fond */
+    pointer-events: none; /* Assure que le pseudo-élément ne bloque pas les clics */
+}
+
+/* Style pour la navigation */
+nav {
+    position: relative; /* Nécessaire pour que le contenu de la navigation soit au-dessus du pseudo-élément */
+    z-index: 2; /* Assure que la navigation est au-dessus du pseudo-élément */
+}
+
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centre les liens dans le conteneur */
+
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+.menu a:hover {
+    background-color: #333; /* Changement de couleur au survol */
+}
+
+main {
+    width: 100%;
+    max-width: 1200px; /* Limite la largeur du contenu principal */
+    margin: 0 auto; /* Centre le contenu horizontalement */
+    padding: 20px; /* Ajoute un padding autour du contenu */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur totale */
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.sombre {
+    filter: brightness(0.5);
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+}
+
+ .image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Assure l'espacement entre les figures */
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px; /* Limite la largeur du conteneur */
+    margin: 20px auto; /* Centre le conteneur horizontalement et ajoute une marge autour */
+    padding: 0 20px; /* Ajoute un padding à gauche et à droite */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur totale */
+}
+.picture {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Assure l'espacement entre les figures */
+    gap: 0px;
+    width: 100%;
+    max-width: 1200px; /* Limite la largeur du conteneur */
+    margin: 20px auto; /* Centre le conteneur horizontalement et ajoute une marge autour */
+    padding: 0 20px; /* Ajoute un padding à gauche et à droite */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur totale */
+}
+
+
+.picture img, .image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+
+
+footer {
+    background-color: #333;
+    padding-top: 16px;
+
+
+}
+.container{
+    width: 1140px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.footer-content{
+    width: 33.3%;
+}
+h2{
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.footer-content p{
+     width: 100px;
+     margin: auto;
+     padding: 7px;
+
+}
+.footer-content ul{
+    text-align: center;
+}
+.lists{
+    padding: 0;
+}
+.lists li{
+    width: auto;
+    text-align: center;
+    list-style-type: none;
+    padding: 7px;
+    position: relative;
+}
+.lists li::before{
+    content: '';
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background-color: #575757;
+    transition-duration: -5s;
+}
+.lists li:hover::before{
+    width: 70px;
+}
+.social-icons{
+     text-align: center;
+     padding: 0;
+}
+.social-icons li{
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+.social-icons i{
+    color: white;
+    font-size: 25px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #575757;
+}.social-icons i:hover{
+    color: #575757;
+}
+.footer-bottom{
+    background-color: #575757;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+
+}
+.footer-bottom p{
+    color: #333;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+}
+
+/* styles pour les carrousels image*/
+.perl-img{
+    max-height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+.perl{
+    height: ;
+}
+
+  /* Style du formulaire */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin-top: 20px;
+            width: 300px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style des labels */
+        form label {
+            align-self: flex-start;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Style des champs de saisie */
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none; /* Enlève les bordures */
+            border-bottom: 1px solid #ccc; /* Ligne en bas pour un style minimaliste */
+            outline: none; /* Enlève le contour lors du focus */
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: #f9f9f9;
+        }
+
+        /* Style du bouton */
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #575757;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #575757;
+        }
+        .text{
+            color: #575757;
+            font-size: 16px;
+        }
